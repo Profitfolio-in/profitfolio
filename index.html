@@ -45,7 +45,11 @@ https://templatemo.com/tm-556-catalog-z
 
     <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="img/hero.jpg">
         <form class="d-flex tm-search-form">
-            <div id="output"></div>
+            <input type=button onClick="mytest1();" value="Send Excel Data">
+            <input type=text name="my_textarea1" size=70 value="enter ur data here">
+            <br><br>
+            <input type=button onClick="mytest2();" value="Get Excel Data">
+            <input type=text name="my_textarea2" size=70 value="no data collected yet">
             <button class="btn btn-outline-success tm-search-btn" type="submit">
                 <i class="fas fa-search"></i>
             </button>
@@ -331,6 +335,24 @@ https://templatemo.com/tm-556-catalog-z
         $(window).on("load", function() {
             $('body').addClass('loaded');
         });
+
+        function mytest1() {
+            var Excel, Book; // Declare the variables
+            Excel = new ActiveXObject("Excel.Application"); // Create the Excel application object.
+            Excel.Visible = false; // Make Excel invisible.
+            Book = Excel.Workbooks.Add() // Create a new work book.
+            Book.ActiveSheet.Cells(2, 2).Value = document.all.my_textarea1.value;
+            Book.SaveAs("C:/temp/TEST.xls");
+            Excel.Quit(); // Close Excel with the Quit method on the Application object.
+        }
+
+        function mytest2() {
+            var Excel;
+            Excel = new ActiveXObject("Excel.Application");
+            Excel.Visible = false;
+            form1.my_textarea2.value = Excel.Workbooks.Open("C:/temp/TEST.xls").ActiveSheet.Cells(1, 1).Value;
+            Excel.Quit();
+        }
     </script>
 </body>
 </html>
