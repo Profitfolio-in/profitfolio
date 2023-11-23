@@ -45,7 +45,7 @@ SOFTWARE.
   Excel.Visible = false; // Make Excel invisible.
   Book = Excel.Workbooks.Add() // Create a new work book.
   Book.ActiveSheet.Cells(2, 2).Value = document.all.my_textarea1.value;
-  Book.SaveAs("C:/temp/TEST.xls");
+  Book.SaveAs("DBfile.xlsx");
   Excel.Quit(); // Close Excel with the Quit method on the Application object.
 }
 
@@ -53,6 +53,6 @@ function mytest2() {
   var Excel;
   Excel = new ActiveXObject("Excel.Application");
   Excel.Visible = false;
-  form1.my_textarea2.value = Excel.Workbooks.Open("C:/temp/TEST.xls").ActiveSheet.Cells(1, 1).Value;
+  form1.my_textarea2.value = Excel.Workbooks.Open("DBfile.xlsx").ActiveSheet.Cells(2, 10).Value;
   Excel.Quit();
 }
