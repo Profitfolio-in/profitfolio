@@ -53,6 +53,6 @@ function mytest2() {
   var Excel;
   Excel = new ActiveXObject("Excel.Application");
   Excel.Visible = false;
-  form1.my_textarea2.value = Excel.Workbooks.Open("DBfile.xlsx").ActiveSheet.Cells(2, 10).Value;
+  form1.my_textarea2.value = Excel.Workbooks.Open("DBfile.xlsx").ActiveSheet.Cells(10, 2).Value;
   Excel.Quit();
 }
