@@ -361,7 +361,7 @@ function mytest2() {
         (
             async()==>{
                 let workbook = XLSX.read(await(await fetch("./DBfile.xlsx")).arrayBuffer());
-                console.log(workbook);
+                //console.log(workbook);
         table.innerHTML = workbook.Sheets["Sheet1"].Cells(10, 2).Value;
 }
     </script>
