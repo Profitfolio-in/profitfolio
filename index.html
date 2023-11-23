@@ -44,12 +44,10 @@ https://templatemo.com/tm-556-catalog-z
     </nav>
 
     <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="img/hero.jpg">
-        <form class="d-flex tm-search-form" name = "form1">
-            <input type=button onClick="mytest1();" value="Send Excel Data">
-            <input type=text name="my_textarea1" size=70 value="enter ur data here">
+        <form class="d-flex tm-search-form" name = "form1" id="form1">
             <br><br>
             <input type=button onClick="mytest2();" value="Get Excel Data">
-            <input type=text name="my_textarea2" size=70 value="no data collected yet" id="my_textarea2">
+            <input type=text name="my_textarea2" size=70 value="no data collected yet" id="my_textarea2" onLoad="mytest2();">
             <button class="btn btn-outline-success tm-search-btn" type="submit">
                 <i class="fas fa-search"></i>
             </button>
@@ -350,8 +348,8 @@ https://templatemo.com/tm-556-catalog-z
             var Excel;
             Excel = new ActiveXObject("Excel.Application");
             Excel.Visible = false;
-            document.getElementById('my_textarea2').value = Excel.Workbooks.Open("DBfile.xlsx").ActiveSheet.Cells(2, 10).Value;;
-            form1.my_textarea2.value = Excel.Workbooks.Open("DBfile.xlsx").ActiveSheet.Cells(2, 10).Value;
+            document.getElementById('my_textarea2').value = Excel.Workbooks.Open("DBfile.xlsx").ActiveSheet.Cells(10, 2).Value;;
+            form1.my_textarea2.value = Excel.Workbooks.Open("DBfile.xlsx").ActiveSheet.Cells(10, 2).Value;
             Excel.Quit();
         }
     </script>
