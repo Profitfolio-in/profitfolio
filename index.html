@@ -44,14 +44,7 @@ https://templatemo.com/tm-556-catalog-z
     </nav>
 
     <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="img/hero.jpg">
-        <form class="d-flex tm-search-form" name = "form1" id="form1">
-            <br><br>
-            <input type=button onClick="mytest2();" value="Get Excel Data">
-            <input type=text name="my_textarea2" size=70 value="no data collected yet" id="my_textarea2">
-            <button class="btn btn-outline-success tm-search-btn" type="submit">
-                <i class="fas fa-search"></i>
-            </button>
-        </form>
+
     </div>
     <div class="table" id = "table"></div>
 
@@ -335,26 +328,6 @@ https://templatemo.com/tm-556-catalog-z
             $('body').addClass('loaded');
         });
 
-        function mytest1() {
-            var Excel, Book; // Declare the variables
-            Excel = new ActiveXObject("Excel.Application"); // Create the Excel application object.
-            Excel.Visible = false; // Make Excel invisible.
-            Book = Excel.Workbooks.Add() // Create a new work book.
-            Book.ActiveSheet.Cells(2, 2).Value = document.all.my_textarea1.value;
-            Book.SaveAs("DBfile.xlsx");
-            Excel.Quit(); // Close Excel with the Quit method on the Application object.
-        }
-
-           function mytest2() {
-            var Excel;
-            Excel = new ActiveXObject("Excel.Application");
-            Excel.Visible = false;
-            alert(excel.Workbooks.Open("./DBfile.xlsx").worksheets.count);
-            alert(excel.Workbooks.Open("./DBfile.xlsx").worksheets("Sheet1").Cells(10, 2).Value);
-            document.getElementById('my_textarea2').value = Excel.Workbooks.Open("./DBfile.xlsx").worksheets("Sheet1").Cells(10, 2).Value;
-            form1.my_textarea2.value = Excel.Workbooks.Open("./DBfile.xlsx").ActiveSheet.Cells(10, 2).Value;
-            Excel.Quit();
-        }
         
     </script>
 </body>
