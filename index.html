@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/templatemo-style.css">
+    
 <!--
     
 TemplateMo 556 Catalog-Z
@@ -15,7 +16,7 @@ https://templatemo.com/tm-556-catalog-z
 
 -->
 </head>
-<body>
+<body onload="test()">
     <!-- Page Loader -->
     <div id="loader-wrapper">
         <div id="loader"></div>
@@ -42,11 +43,37 @@ https://templatemo.com/tm-556-catalog-z
             </div>
         </div>
     </nav>
-
     <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="img/hero.jpg">
+        <input type="file" id = "input" value = "DBfile.xlsx">
+        
+        <table id = "tbl-data"></table>
 
+        <script src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></script>
+        <script> 
+        function test(){
+            var f = new File([""], "./DBfile.xlsx");
+            //var input2 = document.getElementById('input2');
+            readXlsxFile(f.files[0]).then(function(data) {
+                    console.log(f);
+                    console.log(f.files[0]);
+                    let table = document.getElementById("tbl-data");
+                    table.innerHTML = data[0][6];
+                });
+        }
+
+            var input = document.getElementById('input');
+            //var input2 = 'DBfile.xlsx';
+            input.addEventListener('change',function(){
+                readXlsxFile(input.files[0]).then(function(data) {
+                    console.log(input);
+                    console.log(input.files[0]);
+                    let table = document.getElementById("tbl-data");
+                    table.innerHTML = data[0][6];
+                });
+            });
+        </script>
+    </input>
     </div>
-    <div class="table" id = "table"></div>
 
     <div class="container-fluid tm-container-content tm-mt-60">
         <div class="row mb-4">
@@ -323,12 +350,12 @@ https://templatemo.com/tm-556-catalog-z
     </footer>
     
     <script src="js/plugins.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
     <script>
         $(window).on("load", function() {
             $('body').addClass('loaded');
         });
-
-        
     </script>
+
 </body>
 </html>
