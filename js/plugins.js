@@ -54,5 +54,5 @@ document.addEventListener("DOMContentLoaded", async function () {
   let resp = await n.json()
   console.log(resp)
   let table = document.getElementById("tbl-data");
-  table.innerHTML = resp.data[172].name + " : "+ resp.data[210].name;
+  table.innerHTML = resp.data[28].name + " : "+ resp.data[30].name;
 })
