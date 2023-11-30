@@ -40,3 +40,19 @@ SOFTWARE.
  //# sourceMappingURL=bootstrap.bundle.min.js.map
 
 
+async function fetchData(){
+
+let n = await fetch("https://script.google.com/macros/s/AKfycbzMBpkE5viiyVJJ4Gt4qtiE70EBIRG62-U7M2BEIMRn6xsGep9f-Ulh_9klAcRPhJ4fIg/exec")
+let resp = await n.json()
+console.log(resp)
+let table = document.getElementById("tbl-data");
+table.innerHTML = resp[30].name;
+}
+
+document.addEventListener("DOMContentLoaded", async function () {
+  let n = await fetch("https://script.google.com/macros/s/AKfycbzMBpkE5viiyVJJ4Gt4qtiE70EBIRG62-U7M2BEIMRn6xsGep9f-Ulh_9klAcRPhJ4fIg/exec")
+  let resp = await n.json()
+  console.log(resp)
+  let table = document.getElementById("tbl-data");
+  table.innerHTML = resp.data[172].name + " : "+ resp.data[210].name;
+})
