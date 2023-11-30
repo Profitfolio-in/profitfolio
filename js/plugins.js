@@ -50,7 +50,7 @@ table.innerHTML = resp[30].name;
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
-  let n = await fetch("https://script.google.com/macros/s/AKfycbygX3VLnY6FQnRU-BrxjrHq9JOkKJZ2nvaH1XH9FmyeI52uPw798HzTOgtGmxkXxqWsMg/exec")
+  let n = await fetch("https://script.google.com/macros/s/AKfycbwMNv12o50OwhCW2aLInPRcJfToYl2b3eztYHMgivv_FZLozmQlLsa69lmLK6aCKsPuSg/exec")
   let resp = await n.json()
   console.log(resp)
   let table = document.getElementById("tbl-data");
