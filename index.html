@@ -65,6 +65,10 @@
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
+        #row1 {
+            background-color: #92bfec;
+        }
+
 
     </style>
 </head>
@@ -73,6 +77,14 @@
     <header>
         <h1>Rahav's Stock Portfolio</h1>
     </header>
+
+    <div class="content">
+        <table id = "tbl2">
+            <tr><td id="row1"></td></tr>
+            <tr><td id="row2"></td></tr>
+            <tr><td id="row3"></td></tr>
+        </table>
+    </div>
 
     <main>
         <table id="data-table">
@@ -103,14 +115,24 @@ const gridOptions = {
 
         // Sample JavaScript to populate the table
         document.addEventListener('DOMContentLoaded', async function () {
-            let n = await fetch("https://script.google.com/macros/s/AKfycbwrp5txtwIkChd2W3U4a4vWMtcAghS6kvkCxDDzGFjsp_SVJl4qpQFnC8-4aGyH0Y0XeQ/exec")
+            let n = await fetch("https://script.google.com/macros/s/AKfycbww26AkruYOb3fGAL03BF5z0oL07tmmPUcw9eCaK8e-mf-6qvUG3yrrmOtfk8aSQv-jUg/exec")
             let resp = await n.json()
             console.log(resp)
+
+            //
+            const row1 = document.getElementById('row1');
+            row1.innerHTML = resp.data[29].name + " : Rs. " + resp.data[31].name
+            const row2 = document.getElementById('row2');
+            row2.innerHTML = resp.data[49].name + " : Rs. " + Math.round(resp.data[51].name) + "     ("+parseFloat((resp.data[51].name/resp.data[31].name)*100).toFixed(2)+ "%)"
+            const row3 = document.getElementById('row3');
+            row3.innerHTML = resp.data[69].name + " : Rs. " + Math.round(resp.data[71].name)
+            console.log(resp.data[69].name + " : " + Math.round(resp.data[71].name))
+
             // Get the table element
             const table = document.getElementById('data-table');
             let r = 123;
             // Create 12 rows
-            for (let i = 1; i <= 15; i++) {
+            for (let i = 1; i <= 13; i++) {
                 const row = table.insertRow();
                 
                 // Create 5 cells in each row
@@ -136,6 +158,8 @@ const gridOptions = {
                 }
                 r=r+11;
             }
+
+
         });
     </script>
 </body>
