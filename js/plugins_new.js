@@ -47,7 +47,8 @@ const gridOptions = {
                     var fileName = document.getElementById('file').textContent;
                     //console.log(fileName);
                     const file = document.getElementById('file');
-                    file.innerHTML=Number(fileName)-1;
+                    if(Number(fileName)>1)
+                        {file.innerHTML=Number(fileName)-1;}
                     //console.log(Number(fileName)-1);
                     document.querySelector('iframe').src = file.innerHTML+'.html';
                 }
@@ -57,7 +58,9 @@ const gridOptions = {
                     var fileName = document.getElementById('file').textContent;
                     //console.log(fileName);
                     const file = document.getElementById('file');
-                    file.innerHTML=Number(fileName)+1;
+
+                    if(Number(fileName)<2)
+                        {file.innerHTML=Number(fileName)+1;}
                     //console.log(Number(fileName)+1);
                     document.querySelector('iframe').src = file.innerHTML+'.html';
                 }
