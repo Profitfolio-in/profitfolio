@@ -29,7 +29,7 @@ table, th, td {
 
 
 th, td {
-    border: none;
+    border: 1px solid #ddd;
     padding: 12px;
     text-align: center;
     white-space: nowrap;
@@ -38,6 +38,7 @@ th, td {
     color: rgb(3, 2, 2);
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 6px; 
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -75,5 +76,11 @@ tr:hover td {
     color: white;
     border: none;
     cursor: pointer;
+}
+
+.button-container:hover button {
+    background-color: #ffcc00; /* Change background color on hover */
+    color: #333; /* Change text color on hover */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
