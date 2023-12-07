@@ -51,7 +51,7 @@ const gridOptions = {
                     if(r==(124+((i-1)*20)) && r != 124 && (resp.data[r].name != null))
                         cell.textContent = 'Rs. '+resp.data[r].name;
                     else if(r==(125+((i-1)*20)) && r != 125 && (resp.data[r].name != null))
-                        cell.textContent = resp.data[r].name.substr(2,8);
+                        cell.textContent = Number(resp.data[r].name.substr(8,2))+1+"-"+resp.data[r].name.substr(5,2)+"-20"+resp.data[r].name.substr(2,2);
                     else if(r==(126+((i-1)*20)) && r != 126 && (resp.data[r].name != null))
                         cell.textContent = 'Rs. '+resp.data[r].name;
                     else if(r==(128+((i-1)*20)) && r != 128 && (resp.data[r].name != null))
