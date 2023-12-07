@@ -2,10 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 20px;
 }
-
+.invisible-text {
+    display: none;
+}
 header, footer {
     background-color: #f2f2f2;
-    padding: 10px;
+    padding: 1px;
     text-align: center;
 }
 

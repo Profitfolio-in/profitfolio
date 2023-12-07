@@ -25,9 +25,15 @@ const gridOptions = {
 
             let n = await fetch("https://script.google.com/macros/s/AKfycbww26AkruYOb3fGAL03BF5z0oL07tmmPUcw9eCaK8e-mf-6qvUG3yrrmOtfk8aSQv-jUg/exec")
             let resp = await n.json()
-            console.log(resp)
+            //console.log(resp)
 
-
+            const row1 = document.getElementById('row1');
+            row1.innerHTML = "Starting Quarter with" + " : Rs. " + resp.data[254].name
+            const row2 = document.getElementById('row2');
+            row2.innerHTML = "Profit for the Quarter:" + " : Rs. " + Math.round(resp.data[274].name) + "     ("+parseFloat((resp.data[274].name/resp.data[254].name)*100).toFixed(2)+ "%)"
+            const row3 = document.getElementById('row3');
+            row3.innerHTML = "Ending Quarter with" + " : Rs. " + Math.round(resp.data[71].name)
+            //console.log(resp.data[69].name + " : " + Math.round(resp.data[314].name))
 
             // Get the table element
             const table = document.getElementById('data-table');
@@ -39,7 +45,7 @@ const gridOptions = {
                 // Create 5 cells in each row
                 for (let j = 1; j <= 9; j++) {
                     
-                    console.log('Value of r :'+r)
+                    //console.log('Value of r :'+r)
                     const cell = row.insertCell();
                     // Sample data: Display row and column index in each cell
                     if(r==(124+((i-1)*20)) && r != 124 && (resp.data[r].name != null))
@@ -59,6 +65,8 @@ const gridOptions = {
                 }
                 r=r+11;
             }
+
+
 
 
         });
