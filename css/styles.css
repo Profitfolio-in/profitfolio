@@ -64,6 +64,11 @@ tr:hover td {
     background-color: #92bfec;
 }
 
+#quarter {
+    background-color: #92bfec;
+    text-align: center;
+}
+
 .button-container {
     display: flex;
     justify-content: space-between;
