@@ -45,7 +45,7 @@ const gridOptions = {
                 function handleLeftButtonClick() {
                     
                     var fileName = document.getElementById('file').textContent;
-                    alert(Number(fileName));
+                    //alert(Number(fileName));
                     //console.log(fileName);
                     const file = document.getElementById('file');
                     if(Number(fileName)>1)
@@ -57,7 +57,7 @@ const gridOptions = {
                 }
         
                 function handleRightButtonClick() {
-                    alert(Number(fileName));
+                    //alert(Number(fileName));
                     //alert('Right Button Clicked!');
                     var fileName = document.getElementById('file').textContent;
                     //console.log(fileName);
