@@ -23,50 +23,74 @@ const gridOptions = {
   //const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
   //const table = iframeDocument.getElementById('data-table');
 
-            let n = await fetch("https://script.google.com/macros/s/AKfycbww26AkruYOb3fGAL03BF5z0oL07tmmPUcw9eCaK8e-mf-6qvUG3yrrmOtfk8aSQv-jUg/exec")
+            let n = await fetch("https://script.google.com/macros/s/AKfycbzWnu5by_TrF9n5pBId1-JuxvGuSsg8CEWwDM-XpS4XB9XfZlTJynpx4rtXHnu66kmPuQ/exec")
             let resp = await n.json()
             //console.log(resp)
 
-            const row1 = document.getElementById('row1');
-            row1.innerHTML = "Starting Quarter with" + " : Rs. " + resp.data[254].name
-            const row2 = document.getElementById('row2');
-            row2.innerHTML = "Profit for the Quarter:" + " : Rs. " + Math.round(resp.data[274].name) + "     ("+parseFloat((resp.data[274].name/resp.data[254].name)*100).toFixed(2)+ "%)"
-            const row3 = document.getElementById('row3');
-            row3.innerHTML = "Ending Quarter with" + " : Rs. " + Math.round(resp.data[71].name)
+            var fileName = document.getElementById('file').textContent;
+            //alert(fileName)
+            var serialNumber = 1;
+            if(Number(fileName)==1){ serialNumber = 94}
+            if(Number(fileName)==2){ serialNumber = 354}
+            if(Number(fileName)==3){ serialNumber = 575}
+            if(Number(fileName)==4){ serialNumber = 809}
+            //alert(serialNumber)
+
             //console.log(resp.data[69].name + " : " + Math.round(resp.data[314].name))
 
             // Get the table element
             const table = document.getElementById('data-table');
-            let r = 123;
-            // Create 12 rows
-            for (let i = 1; i <= 13; i++) {
+
+
+            const row = table.insertRow();
+            const cell1 = row.insertCell(); const cell2 = row.insertCell(); const cell3 = row.insertCell(); const cell4= row.insertCell(); const cell5 = row.insertCell(); const cell6 = row.insertCell(); const cell7 = row.insertCell(); const cell8 = row.insertCell(); const cell9 = row.insertCell(); const cell10 = row.insertCell();
+            cell1.textContent = "Stock Name";
+            cell2.textContent = "Buy Value";
+            cell3.textContent = "Buy Date";
+            cell4.textContent = "Current Value";
+            cell5.textContent = "Sold Date";
+            cell6.textContent = "Sold Value";
+            cell7.textContent = "Profit %";
+            cell8.textContent = "Invested Amount";
+            cell9.textContent = "Balance Amount";
+            cell10.textContent = "Profit";
+
+            let r = serialNumber;
+            for (let i = 1; i <= 100; i++) {
+                if(resp.data[r].name == "") {
+                    break;}
+
+                    //alert(resp.data[r].name)
                 const row = table.insertRow();
                 
-                // Create 5 cells in each row
-                for (let j = 1; j <= 9; j++) {
+                  
+                    const cell1 = row.insertCell(); const cell2 = row.insertCell(); const cell3 = row.insertCell(); const cell4= row.insertCell(); const cell5 = row.insertCell(); const cell6 = row.insertCell(); const cell7 = row.insertCell(); const cell8 = row.insertCell(); const cell9 = row.insertCell(); const cell10 = row.insertCell();
                     
-                    //console.log('Value of r :'+r)
-                    const cell = row.insertCell();
-                    // Sample data: Display row and column index in each cell
-                    if(r==(124+((i-1)*20)) && r != 124 && (resp.data[r].name != null))
-                        cell.textContent = 'Rs. '+resp.data[r].name;
-                    else if(r==(125+((i-1)*20)) && r != 125 && (resp.data[r].name != null))
-                        cell.textContent = Number(resp.data[r].name.substr(8,2))+1+"-"+resp.data[r].name.substr(5,2)+"-20"+resp.data[r].name.substr(2,2);
-                    else if(r==(126+((i-1)*20)) && r != 126 && (resp.data[r].name != null))
-                        cell.textContent = 'Rs. '+resp.data[r].name;
-                    else if(r==(128+((i-1)*20)) && r != 128 && (resp.data[r].name != null))
-                        cell.textContent = Math.round((resp.data[r].name*100))+" %";
-                    else if(r==(131+((i-1)*20)) && r != 131 && (resp.data[r].name != null))
-                        cell.textContent = "Rs. "+Math.round((resp.data[r].name));
-                    else 
-                        cell.textContent = resp.data[r].name;
+                    cell1.textContent = resp.data[r].name;
+                    cell2.textContent = 'Rs. '+resp.data[r+1].name;
+                    if(resp.data[r+2].name != "")
+                    {cell3.textContent = Number(resp.data[r+2].name.substr(8,2))+1+"-"+resp.data[r+2].name.substr(5,2)+"-20"+resp.data[r+2].name.substr(2,2);}
+                    cell4.textContent = 'Rs. '+resp.data[r+3].name;
+                    if(resp.data[r+4].name != "")
+                    {cell5.textContent = Number(resp.data[r+4].name.substr(8,2))+1+"-"+resp.data[r+4].name.substr(5,2)+"-20"+resp.data[r+4].name.substr(2,2);}
                     
-                    r=r+1;
-                }
-                r=r+11;
+                    cell6.textContent = 'Rs. '+resp.data[r+5].name;
+                    cell7.textContent = Math.round((resp.data[r+6].name*100))+" %";
+
+                    cell8.textContent = 'Rs. '+resp.data[r+7].name;
+                    cell9.textContent = 'Rs. '+resp.data[r+8].name;
+
+                    cell10.textContent = "Rs. "+Math.round((resp.data[r+9].name));
+                    r=r+13
+
             }
 
-
+            const row1 = document.getElementById('row1');
+            row1.innerHTML = "Starting Quarter with" + " : Rs. " + resp.data[r+40].name
+            const row2 = document.getElementById('row2');
+            row2.innerHTML = "Profit for the Quarter:" + " : Rs. " + Math.round(resp.data[r+53].name) + "     ("+parseFloat((resp.data[r+53].name/resp.data[r+40].name)*100).toFixed(2)+ "%)"
+            const row3 = document.getElementById('row3');
+            row3.innerHTML = "Ending Quarter with" + " : Rs. " + Math.round(resp.data[r+79].name)
 
 
         });

@@ -23,17 +23,17 @@ const gridOptions = {
   //const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
   //const table = iframeDocument.getElementById('data-table');
 
-            let n = await fetch("https://script.google.com/macros/s/AKfycbww26AkruYOb3fGAL03BF5z0oL07tmmPUcw9eCaK8e-mf-6qvUG3yrrmOtfk8aSQv-jUg/exec")
+            let n = await fetch("https://script.google.com/macros/s/AKfycbzWnu5by_TrF9n5pBId1-JuxvGuSsg8CEWwDM-XpS4XB9XfZlTJynpx4rtXHnu66kmPuQ/exec")
             let resp = await n.json()
             //console.log(resp)
 
             //
             const row1 = document.getElementById('row1');
-            row1.innerHTML = resp.data[29].name + " : Rs. " + resp.data[31].name
+            row1.innerHTML = resp.data[16].name + " : Rs. " + resp.data[18].name
             const row2 = document.getElementById('row2');
-            row2.innerHTML = resp.data[49].name + " : Rs. " + Math.round(resp.data[51].name) + "     ("+parseFloat((resp.data[51].name/resp.data[31].name)*100).toFixed(2)+ "%)"
+            row2.innerHTML = resp.data[29].name + " : Rs. " + Math.round(resp.data[31].name) + "     ("+parseFloat((resp.data[31].name/resp.data[18].name)*100).toFixed(2)+ "%)"
             const row3 = document.getElementById('row3');
-            row3.innerHTML = resp.data[69].name + " : Rs. " + Math.round(resp.data[71].name)
+            row3.innerHTML = resp.data[42].name + " : Rs. " + Math.round(resp.data[44].name)
             //console.log(resp.data[69].name + " : " + Math.round(resp.data[71].name))
 
     
@@ -43,24 +43,30 @@ const gridOptions = {
 
                 // Button click handlers
                 function handleLeftButtonClick() {
-                    //alert('Left Button Clicked!');
+                    
                     var fileName = document.getElementById('file').textContent;
+                    alert(Number(fileName));
                     //console.log(fileName);
                     const file = document.getElementById('file');
                     if(Number(fileName)>1)
                         {file.innerHTML=Number(fileName)-1;
                         console.log(Number(fileName)-1);}
+                    else
+                        file.innerHTML=Number(fileName)
                     document.querySelector('iframe').src = file.innerHTML+'.html';
                 }
         
                 function handleRightButtonClick() {
+                    alert(Number(fileName));
                     //alert('Right Button Clicked!');
                     var fileName = document.getElementById('file').textContent;
                     //console.log(fileName);
                     const file = document.getElementById('file');
 
-                    if(Number(fileName)<2)
+                    if(Number(fileName)<4)
                         {file.innerHTML=Number(fileName)+1;
                         console.log(Number(fileName)+1);}
+                    else
+                        file.innerHTML=Number(fileName)
                     document.querySelector('iframe').src = file.innerHTML+'.html';
                 }
