@@ -59,14 +59,14 @@ container.innerHTML += "<div class=\"tile3\"> "+
 "<p style=\"color:green\" class=\"tile3-r\" id=\"1\"> <b>Profit:</b>"+"Rs."+Math.round((resp.data[r+9].name))+" ("+Math.round((resp.data[r+6].name*100))+"%) "+"<span style=\"color:green\">&uarr;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p> <br>"+
 "</div><br>"}
 else if(resp.data[r+5].name != "" && resp.data[r+4].name == "") {
-    container.innerHTML += "<table border-collapse: collapse ><div class=\"tile3\"> "+
-"<tr><td><p class=\"tile3-p\">"+resp.data[r].name+"</p></td></tr>"+
-"<tr><td><p class=\"tile3-l\" id=\"1\"> <b>Buy Value:</b>"+'Rs.'+resp.data[r+1].name+"&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p></td>" +
-"<td><p class=\"tile3-c\" id=\"1\"> <b>Buy Date:</b>"+Number(resp.data[r+2].name.substr(8,2))+"-"+resp.data[r+2].name.substr(5,2)+"-20"+resp.data[r+2].name.substr(2,2)+"&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p></td>"+
-"<td><p class=\"tile3-r\" id=\"1\"> <b>Invested Amount:</b>"+'Rs.'+Math.round(resp.data[r+7].name)+"&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p></td></tr><br>"+
-"<tr><td><p class=\"tile3-l\" id=\"1\"> <b>Sell Value:</b>"+'Rs.'+resp.data[r+5].name+"&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p></td>" +
-"<td><p class=\"tile3-c\" id=\"1\"> <b>Sell Date:</b> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p></td>"+
-"<td><p style=\"color:green\" class=\"tile3-r\" id=\"1\"> <b>Profit:</b>"+"Rs."+Math.round((resp.data[r+9].name))+" ("+Math.round((resp.data[r+6].name*100))+"%) "+"<span style=\"color:green\">&uarr;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p> </td></tr><br>"+
+    container.innerHTML += "<div class=\"tile3\"> "+
+"<p class=\"tile3-p\">"+resp.data[r].name+"</p>"+
+"<p class=\"tile3-l\" id=\"1\"> <b>Buy Value:</b>"+'Rs.'+resp.data[r+1].name+"&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>" +
+"<p class=\"tile3-c\" id=\"1\"> <b>Buy Date:</b>"+Number(resp.data[r+2].name.substr(8,2))+"-"+resp.data[r+2].name.substr(5,2)+"-20"+resp.data[r+2].name.substr(2,2)+"&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>"+
+"<p class=\"tile3-r\" id=\"1\"> <b>Invested Amount:</b>"+'Rs.'+Math.round(resp.data[r+7].name)+"&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p><br>"+
+"<p class=\"tile3-l\" id=\"1\"> <b>Sell Value:</b>"+'Rs.'+resp.data[r+5].name+"&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>" +
+"<p class=\"tile3-c\" id=\"1\"> <b>Sell Date:</b> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>"+
+"<p style=\"color:green\" class=\"tile3-r\" id=\"1\"> <b>Profit:</b>"+"Rs."+Math.round((resp.data[r+9].name))+" ("+Math.round((resp.data[r+6].name*100))+"%) "+"<span style=\"color:green\">&uarr;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p><br>"+
 "</div><br>"
 }
  else {
