@@ -92,7 +92,7 @@ body {
 }
 
 .tile3-l{
-    text-align: justify;
+    text-align: left;
     font-size: 14px;
     text-size-adjust: 0.545;
     padding: 10px;
@@ -103,7 +103,7 @@ body {
 }
 
 .tile3-c{
-    text-align: justify;
+    text-align: center;
     font-size: 14px;
     text-size-adjust: 0.545;
     padding: 10px;
@@ -114,7 +114,7 @@ body {
 }
 
 .tile3-r{
-    text-align: justify;
+    text-align: right;
     font-size: 14px;
     text-size-adjust: 0.545;
     padding: 10px;
