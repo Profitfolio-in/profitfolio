@@ -73,12 +73,12 @@ body {
     height: auto;  /* Let height be determined by content */
     max-width: 100%;  /* No max-width constraint */
     border-radius: 12px;
-    overflow:auto;
+    overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);  /* Soft shadows */
     /*transition: transform 0.3s ease, box-shadow 0.3s ease;*/
     text-align: left;
     padding: 10px;
-    padding-right: 10px;
+    padding-right: 100px;
     vertical-align: text-top;
     line-height: 10px;
     
@@ -135,6 +135,7 @@ body {
     padding: 30px;
     text-align: center;
     position: relative;
+
 }
 
 /* Title styling */
