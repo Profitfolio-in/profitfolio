@@ -37,9 +37,132 @@ const gridOptions = {
             //alert(serialNumber)
 
             //console.log(resp.data[69].name + " : " + Math.round(resp.data[314].name))
+//-------------------------------------------------------------------------------------------------
 
+let r = serialNumber;
+for (let i = 1; i <= 100; i++) {
+    if(resp.data[r].name == "") {
+        break;}
+let container = document.getElementById("200");
+if(Math.round((resp.data[r+9].name))>0){
+if(resp.data[r+5].name == "")
+{
+container.innerHTML += "<div class=\"tile3\"> "+
+"<p class=\"tile3-p\">"+resp.data[r].name+"</p>"+
+"<p class=\"tile3-l\" id=\"1\"> <b>Buy Value:</b> "+'Rs.'+resp.data[r+1].name+"</p>" +
+"<p class=\"tile3-c\" id=\"1\"> <b>Buy Date:</b> "+Number(resp.data[r+2].name.substr(8,2))+"-"+resp.data[r+2].name.substr(5,2)+"-20"+resp.data[r+2].name.substr(2,2)+"</p>"+
+"<p class=\"tile3-r\" id=\"1\"> <b>Invested Amount:</b> "+'Rs.'+Math.round(resp.data[r+7].name)+"</p><br>"+
+"<p class=\"tile3-l\" id=\"1\"> <b>Sell Value:</b> </p>" +
+"<p class=\"tile3-c\" id=\"1\"> <b>Sell Date:</b> </p>"+
+"<p style=\"color:green\" class=\"tile3-r\" id=\"1\"> <b>Profit:</b> "+"Rs."+Math.round((resp.data[r+9].name))+" ("+Math.round((resp.data[r+6].name*100))+"%) "+"<span style=\"color:green\">&uarr;</span></p> <br>"+
+"</div><br>"}
+else if(resp.data[r+5].name != "" && resp.data[r+4].name == "") {
+    container.innerHTML += "<div class=\"tile3\"> "+
+"<p class=\"tile3-p\">"+resp.data[r].name+"</p>"+
+"<p class=\"tile3-l\" id=\"1\"> <b>Buy Value:</b> "+'Rs.'+resp.data[r+1].name+"</p>" +
+"<p class=\"tile3-c\" id=\"1\"> <b>Buy Date:</b> "+Number(resp.data[r+2].name.substr(8,2))+"-"+resp.data[r+2].name.substr(5,2)+"-20"+resp.data[r+2].name.substr(2,2)+"</p>"+
+"<p class=\"tile3-r\" id=\"1\"> <b>Invested Amount:</b> "+'Rs.'+Math.round(resp.data[r+7].name)+"</p><br>"+
+"<p class=\"tile3-l\" id=\"1\"> <b>Sell Value:</b> "+'Rs.'+resp.data[r+5].name+"</p>" +
+"<p class=\"tile3-c\" id=\"1\"> <b>Sell Date:</b> </p>"+
+"<p style=\"color:green\" class=\"tile3-r\" id=\"1\"> <b>Profit:</b> "+"Rs."+Math.round((resp.data[r+9].name))+" ("+Math.round((resp.data[r+6].name*100))+"%) "+"<span style=\"color:green\">&uarr;</span></p> <br>"+
+"</div><br>"
+}
+ else {
+    container.innerHTML += "<div class=\"tile3\"> "+
+    "<p class=\"tile3-p\">"+resp.data[r].name+"</p>"+
+    "<p class=\"tile3-l\" id=\"1\"> <b>Buy Value:</b> "+'Rs.'+resp.data[r+1].name+"</p>" +
+    "<p class=\"tile3-c\" id=\"1\"> <b>Buy Date:</b> "+Number(resp.data[r+2].name.substr(8,2))+"-"+resp.data[r+2].name.substr(5,2)+"-20"+resp.data[r+2].name.substr(2,2)+"</p>"+
+    "<p class=\"tile3-r\" id=\"1\"> <b>Invested Amount:</b> "+'Rs.'+Math.round(resp.data[r+7].name)+"</p><br>"+
+    "<p class=\"tile3-l\" id=\"1\"> <b>Sell Value:</b> "+'Rs.'+resp.data[r+5].name+"</p>" +
+    "<p class=\"tile3-c\" id=\"1\"> <b>Sell Date:</b> "+Number(resp.data[r+4].name.substr(8,2))+"-"+resp.data[r+4].name.substr(5,2)+"-20"+resp.data[r+4].name.substr(2,2)+"</p>"+
+    "<p style=\"color:green\" class=\"tile3-r\" id=\"1\"> <b>Profit:</b> "+"Rs."+Math.round((resp.data[r+9].name))+" ("+Math.round((resp.data[r+6].name*100))+"%) "+"<span style=\"color:green\">&uarr;</span></p> <br>"+
+    "</div><br>"
+    }}
+    else if(Math.round((resp.data[r+9].name))<0){
+        if(resp.data[r+5].name == "")
+        {
+        container.innerHTML += "<div class=\"tile3\"> "+
+        "<p class=\"tile3-p\">"+resp.data[r].name+"</p>"+
+        "<p class=\"tile3-l\" id=\"1\"> <b>Buy Value:</b> "+'Rs.'+resp.data[r+1].name+"</p>" +
+        "<p class=\"tile3-c\" id=\"1\"> <b>Buy Date:</b> "+Number(resp.data[r+2].name.substr(8,2))+"-"+resp.data[r+2].name.substr(5,2)+"-20"+resp.data[r+2].name.substr(2,2)+"</p>"+
+        "<p class=\"tile3-r\" id=\"1\"> <b>Invested Amount:</b> "+'Rs.'+Math.round(resp.data[r+7].name)+"</p><br>"+
+        "<p class=\"tile3-l\" id=\"1\"> <b>Sell Value:</b> </p>" +
+        "<p class=\"tile3-c\" id=\"1\"> <b>Sell Date:</b> </p>"+
+        "<p style=\"color:red\" class=\"tile3-r\" id=\"1\"> <b>Loss:</b> "+"Rs."+Math.round((resp.data[r+9].name))+" ("+Math.round((resp.data[r+6].name*100))+"%) "+"<span style=\"color:red\">&darr;</span></p> <br>"+
+        "</div><br>"}
+        else if(resp.data[r+5].name != "" && resp.data[r+4].name == "") {
+            container.innerHTML += "<div class=\"tile3\"> "+
+        "<p class=\"tile3-p\">"+resp.data[r].name+"</p>"+
+        "<p class=\"tile3-l\" id=\"1\"> <b>Buy Value:</b> "+'Rs.'+resp.data[r+1].name+"</p>" +
+        "<p class=\"tile3-c\" id=\"1\"> <b>Buy Date:</b> "+Number(resp.data[r+2].name.substr(8,2))+"-"+resp.data[r+2].name.substr(5,2)+"-20"+resp.data[r+2].name.substr(2,2)+"</p>"+
+        "<p class=\"tile3-r\" id=\"1\"> <b>Invested Amount:</b> "+'Rs.'+Math.round(resp.data[r+7].name)+"</p><br>"+
+        "<p class=\"tile3-l\" id=\"1\"> <b>Sell Value:</b> "+'Rs.'+resp.data[r+5].name+"</p>" +
+        "<p class=\"tile3-c\" id=\"1\"> <b>Sell Date:</b> </p>"+
+        "<p style=\"color:red\" class=\"tile3-r\" id=\"1\"> <b>Loss:</b> "+"Rs."+Math.round((resp.data[r+9].name))+" ("+Math.round((resp.data[r+6].name*100))+"%) "+"<span style=\"color:red\">&darr;</span></p> <br>"+
+        "</div><br>"
+        }
+         else {
+            container.innerHTML += "<div class=\"tile3\"> "+
+            "<p class=\"tile3-p\">"+resp.data[r].name+"</p>"+
+            "<p class=\"tile3-l\" id=\"1\"> <b>Buy Value:</b> "+'Rs.'+resp.data[r+1].name+"</p>" +
+            "<p class=\"tile3-c\" id=\"1\"> <b>Buy Date:</b> "+Number(resp.data[r+2].name.substr(8,2))+"-"+resp.data[r+2].name.substr(5,2)+"-20"+resp.data[r+2].name.substr(2,2)+"</p>"+
+            "<p class=\"tile3-r\" id=\"1\"> <b>Invested Amount:</b> "+'Rs.'+Math.round(resp.data[r+7].name)+"</p><br>"+
+            "<p class=\"tile3-l\" id=\"1\"> <b>Sell Value:</b> "+'Rs.'+resp.data[r+5].name+"</p>" +
+            "<p class=\"tile3-c\" id=\"1\"> <b>Sell Date:</b> "+Number(resp.data[r+4].name.substr(8,2))+"-"+resp.data[r+4].name.substr(5,2)+"-20"+resp.data[r+4].name.substr(2,2)+"</p>"+
+            "<p style=\"color:red\" class=\"tile3-r\" id=\"1\"> <b>Loss:</b> "+"Rs."+Math.round((resp.data[r+9].name))+" ("+Math.round((resp.data[r+6].name*100))+"%) "+"<span style=\"color:red\">&darr;</span></p> <br>"+
+            "</div><br>"
+            }}
+        else 
+        {
+            if(resp.data[r+5].name == "")
+            {
+            container.innerHTML += "<div class=\"tile3\"> "+
+            "<p class=\"tile3-p\">"+resp.data[r].name+"</p>"+
+            "<p class=\"tile3-l\" id=\"1\"> <b>Buy Value:</b> "+'Rs.'+resp.data[r+1].name+"</p>" +
+            "<p class=\"tile3-c\" id=\"1\"> <b>Buy Date:</b> "+Number(resp.data[r+2].name.substr(8,2))+"-"+resp.data[r+2].name.substr(5,2)+"-20"+resp.data[r+2].name.substr(2,2)+"</p>"+
+            "<p class=\"tile3-r\" id=\"1\"> <b>Invested Amount:</b> "+'Rs.'+Math.round(resp.data[r+7].name)+"</p><br>"+
+            "<p class=\"tile3-l\" id=\"1\"> <b>Sell Value:</b> </p>" +
+            "<p class=\"tile3-c\" id=\"1\"> <b>Sell Date:</b> </p>"+
+            "<p style=\"color:green\" class=\"tile3-r\" id=\"1\"> <b>Profit:</b> "+"Rs."+Math.round((resp.data[r+9].name))+" ("+Math.round((resp.data[r+6].name*100))+"%)"+"</p> <br>"+
+            "</div><br>"}
+            else if(resp.data[r+5].name != "" && resp.data[r+4].name == "") {
+                container.innerHTML += "<div class=\"tile3\"> "+
+            "<p class=\"tile3-p\">"+resp.data[r].name+"</p>"+
+            "<p class=\"tile3-l\" id=\"1\"> <b>Buy Value:</b> "+'Rs.'+resp.data[r+1].name+"</p>" +
+            "<p class=\"tile3-c\" id=\"1\"> <b>Buy Date:</b> "+Number(resp.data[r+2].name.substr(8,2))+"-"+resp.data[r+2].name.substr(5,2)+"-20"+resp.data[r+2].name.substr(2,2)+"</p>"+
+            "<p class=\"tile3-r\" id=\"1\"> <b>Invested Amount:</b> "+'Rs.'+Math.round(resp.data[r+7].name)+"</p><br>"+
+            "<p class=\"tile3-l\" id=\"1\"> <b>Sell Value:</b> "+'Rs.'+resp.data[r+5].name+"</p>" +
+            "<p class=\"tile3-c\" id=\"1\"> <b>Sell Date:</b> </p>"+
+            "<p style=\"color:green\" class=\"tile3-r\" id=\"1\"> <b>Profit:</b> "+"Rs."+Math.round((resp.data[r+9].name))+" ("+Math.round((resp.data[r+6].name*100))+"%)"+"</p> <br>"+
+            "</div><br>"
+            }
+             else {
+                container.innerHTML += "<div class=\"tile3\"> "+
+                "<p class=\"tile3-p\">"+resp.data[r].name+"</p>"+
+                "<p class=\"tile3-l\" id=\"1\"> <b>Buy Value:</b> "+'Rs.'+resp.data[r+1].name+"</p>" +
+                "<p class=\"tile3-c\" id=\"1\"> <b>Buy Date:</b> "+Number(resp.data[r+2].name.substr(8,2))+"-"+resp.data[r+2].name.substr(5,2)+"-20"+resp.data[r+2].name.substr(2,2)+"</p>"+
+                "<p class=\"tile3-r\" id=\"1\"> <b>Invested Amount:</b> "+'Rs.'+Math.round(resp.data[r+7].name)+"</p><br>"+
+                "<p class=\"tile3-l\" id=\"1\"> <b>Sell Value:</b> "+'Rs.'+resp.data[r+5].name+"</p>" +
+                "<p class=\"tile3-c\" id=\"1\"> <b>Sell Date:</b> "+Number(resp.data[r+4].name.substr(8,2))+"-"+resp.data[r+4].name.substr(5,2)+"-20"+resp.data[r+4].name.substr(2,2)+"</p>"+
+                "<p style=\"color:green\" class=\"tile3-r\" id=\"1\"> <b>Profit:</b> "+"Rs."+Math.round((resp.data[r+9].name))+" ("+Math.round((resp.data[r+6].name*100))+"%)"+"</p> <br>"+
+                "</div><br>"
+                }}
+    r=r+13;
+ }
+
+
+
+
+const row1 = document.getElementById('row1');
+row1.innerHTML = "Starting Quarter with" + " : Rs. " + resp.data[r+40].name
+const row2 = document.getElementById('row2');
+row2.innerHTML = "Profit for the Quarter:" + " : Rs. " + Math.round(resp.data[r+53].name) + "     ("+parseFloat((resp.data[r+53].name/resp.data[r+40].name)*100).toFixed(2)+ "%)"
+const row3 = document.getElementById('row3');
+row3.innerHTML = "Ending Quarter with" + " : Rs. " + Math.round(resp.data[r+79].name)
+
+//-------------------------------------------------------------------------------------------------
             // Get the table element
-            const table = document.getElementById('data-table');
+/*            const table = document.getElementsByClassName('data-table');
 
 
             const row = table.insertRow();
@@ -55,7 +178,7 @@ const gridOptions = {
             cell9.textContent = "Balance Amount";
             cell10.textContent = "Profit";
 
-            let r = serialNumber;
+            r = serialNumber;
             for (let i = 1; i <= 100; i++) {
                 if(resp.data[r].name == "") {
                     break;}
@@ -83,14 +206,9 @@ const gridOptions = {
                     cell10.textContent = "Rs. "+Math.round((resp.data[r+9].name));
                     r=r+13
 
-            }
+            }*/
 
-            const row1 = document.getElementById('row1');
-            row1.innerHTML = "Starting Quarter with" + " : Rs. " + resp.data[r+40].name
-            const row2 = document.getElementById('row2');
-            row2.innerHTML = "Profit for the Quarter:" + " : Rs. " + Math.round(resp.data[r+53].name) + "     ("+parseFloat((resp.data[r+53].name/resp.data[r+40].name)*100).toFixed(2)+ "%)"
-            const row3 = document.getElementById('row3');
-            row3.innerHTML = "Ending Quarter with" + " : Rs. " + Math.round(resp.data[r+79].name)
+
 
 
         });

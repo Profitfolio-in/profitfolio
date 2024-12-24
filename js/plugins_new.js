@@ -13,7 +13,16 @@ const gridOptions = {
 
     // other grid options ...
 }
+window.addEventListener('load', () => {
+    // Simulating a delay for the JavaScript execution (like fetching data or performing some setup)
+    setTimeout(() => {
+        // Hide the loading screen
+        document.getElementById('loading-screen').style.display = 'none';
 
+        // Show the content after the JavaScript is fully executed
+        //document.getElementById('content').style.display = 'block';
+    }, 8000);  // Simulating a 2-second delay (can be adjusted or removed for real cases)
+});
 
         // Sample JavaScript to populate the table
         document.addEventListener('DOMContentLoaded', async function () {

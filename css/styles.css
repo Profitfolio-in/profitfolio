@@ -60,13 +60,12 @@ tr:hover td {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-#row1 {
-    background-color: #92bfec;
-}
+
 
 #quarter {
-    background-color: #92bfec;
     text-align: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .button-container {

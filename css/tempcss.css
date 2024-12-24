@@ -1,0 +1,262 @@
+/* Resetting some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Tile with gradient background */
+.tile1 {
+    background: linear-gradient(145deg, #f9f9f9, #52b7cb92);  /* Soft gradient */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /*transition: all 0.3s ease;*/
+}
+
+.tile1:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    /*transform: translateY(-5px);*/
+}
+
+/* Title container styling */
+.title2 {
+    /* Align the content to the left */
+    text-align: left;
+    /* Optional: set the width of the container if you need */
+    width: 100%;
+}
+
+/* Image styling */
+.title2 img {
+    /* Reduce image size */
+    width: 300px;  /* Adjust the width as needed */
+    height: auto;  /* Maintain the aspect ratio */
+    display: inline-block;  /* Ensure the image aligns with text or container */
+    margin-left: 10px;  /* Add some space from the left edge */
+}
+
+.tile2 {
+    background:  radial-gradient(circle at 50% 20%,  #89dbae92,rgba(234, 238, 239, 0.6) );
+    width: 100%;  /* Make the tile span the full width of the screen */
+    height: auto;  /* Let height be determined by content */
+    max-width: 100%;  /* No max-width constraint */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);  /* Soft shadows */
+    /*transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+}
+
+/* Styling the tile */
+.tile {
+    background:  radial-gradient(circle at 50% 20%, rgba(211, 234, 239, 0.6),  #52b7cb92);
+    width: 100%;  /* Make the tile span the full width of the screen */
+    height: auto;  /* Let height be determined by content */
+    max-width: 100%;  /* No max-width constraint */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);  /* Soft shadows */
+    /*transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+}
+
+.tile3{
+    background:  radial-gradient(circle at 50% 20%,  #ffffff92,rgba(234, 239, 237, 0.6) );
+    width: 100%;  /* Make the tile span the full width of the screen */
+    height: auto;  /* Let height be determined by content */
+    max-width: 100%;  /* No max-width constraint */
+    border-radius: 12px;
+    /*overflow: hidden;*/
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);  /* Soft shadows */
+    /*transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+    text-align: left;
+    padding: 10px;
+    vertical-align: text-top;
+    line-height: 10px;
+}
+
+.tile3-p{
+    padding: 10px;
+    font-size: 19px;
+    vertical-align: text-top;
+}
+
+.tile3-l{
+    text-align: left;
+    font-size: 14px;
+    text-size-adjust: 0.545;
+    padding: 10px;
+    vertical-align: text-top;
+    display: inline-block;
+    width: 80px;
+    white-space: nowrap;
+}
+
+.tile3-c{
+    text-align: center;
+    font-size: 14px;
+    text-size-adjust: 0.545;
+    padding: 10px;
+    vertical-align: text-top;
+    display: inline-block;
+    width: 80%;
+    white-space: nowrap;
+}
+
+.tile3-r{
+    text-align: right;
+    font-size: 14px;
+    text-size-adjust: 0.545;
+    padding: 10px;
+    vertical-align: text-top;
+    display: inline-block;
+    width: 80px;
+    white-space: nowrap;
+
+}
+
+
+.tile-content1 {
+    padding: 30px;
+    position: relative;
+}
+
+/* Content inside the tile */
+.tile-content {
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+
+/* Title styling */
+.tile-title {
+    font-size: 1.5rem;  /* Larger title */
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    text-transform: uppercase;  /* Uppercase for title */
+    position: relative;
+    z-index: 1;
+}
+
+/* Description styling */
+.tile-description {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Description styling */
+.tile-description1   {
+    font-size: 1.2rem;
+    color: #05874c;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Button styling */
+.tile-button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button hover effect */
+.tile-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);  /* Button lifts on hover */
+}
+
+/* Hover effect on the tile */
+.tile:hover {
+    /*transform: translateY(-8px);  /* Tile lifts on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 6px 12px rgba(0, 0, 0, 0.08);  /* Darker shadow on hover */
+}
+
+/* Optional: Make the tile responsive on smaller screens */
+@media (max-width: 768px) {
+    .tile {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .tile-title {
+        font-size: 0.2rem;
+    }
+
+    .tile-description {
+        font-size: 1rem;
+    }
+}
+
+
+button {
+    padding: 12px 25px;
+    background:  radial-gradient(circle at 50% 20%, rgba(211, 234, 239, 0.6), rgba(255, 0, 0, 0));
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;  /* Smooth transition for all changes */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */
+}
+
+button:hover {
+    background: linear-gradient(145deg, #4e8cd0, #6fa3ef);  /* Inverted gradient on hover */
+    transform: translateY(-3px);  /* Slight lift on hover */
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);  /* Deeper shadow on hover */
+}
+
+button:active {
+    transform: translateY(1px);  /* Button slightly presses down when clicked */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);  /* Return to the original shadow */
+}
+
+
+/* Loading screen style */
+.loading-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;  /* Make sure it's on top of other content */
+}
+
+.loader {
+    border: 4px solid #f3f3f3;  /* Light background for the spinner */
+    border-top: 4px solid #3498db;  /* Blue color for the spinner */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;  /* Rotate animation */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

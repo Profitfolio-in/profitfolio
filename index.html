@@ -9,26 +9,44 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/tempcss.css">
 </head>
 
 <body>
     <header>
-        <h2>Authentic Stock Portfolio</h2>
-    </header>
-
-    <div class="content">
-        <table id = "tbl2">
-            <tr><td id="row1"></td></tr>
-            <tr><td id="row2"></td></tr>
-            <tr><td id="row3"></td></tr>
-        </table>
+        
+        <div class="tile2">
+            <div class="title2">
+                <img width= 3000px  height= 800px src="img/Strategy_Meets_Success2.png" alt="Logo"> 
+        </div>
     </div>
-<div class="button-container">
+        <br>
+    
+    </header>
+        <!-- Loading screen (initially visible) -->
+        <div id="loading-screen" class="loading-screen">
+            <div class="loader"></div>
+            <p>Loading...</p>
+        </div>
+        <div class="tile"><div class="tile-content">
+            This website showcases my personal sample stock portfolio, where I track and share the performance of investments made with an initial capital of Rs. 10 Lakhs. Each quarter, I invest in 10 carefully selected stocks, documenting the profit or loss for each stock and the overall portfolio. The data includes both quarterly returns and cumulative profits, providing insights into my investment strategy. To understand the data, simply explore the stocks picked each quarter and follow their performance over time.
+        </div>
+        </div><br>
+    <div class="tile">
+        <div class="tile-content">
+            <h5 id = "row1" class="tile-title"></h5>
+            <p color:red id="row2" class="tile-description1"></p>
+            <p id="row3" class="tile-title"></p>
+        </div>
+        <div class="button-container">
     <button onclick="handleLeftButtonClick()">Previous Quarter</button>
-    <p class="invisible-text" id = "file">4</p>
+    <p class="invisible-text" id = "file">1</p>
     <button onclick="handleRightButtonClick()">Next Quarter</button>
 </div>
-<iframe id="myIframe" src="4.html" width="100%" height="1000px" frameborder="0"></iframe>
+    </div>
+    <br>
+
+<iframe id="myIframe" src="1.html" width="100%" height="1000px" frameborder="0"></iframe>
 
 <!--    <main>
         <table id="data-table">
@@ -37,8 +55,10 @@
     </main>
 -->
     <footer>
-        <p></p>
+        
     </footer>
+
+    
 
 <!--   <script>
         $(window).on("load", function() {
