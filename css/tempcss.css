@@ -81,7 +81,6 @@ body {
     padding-right: 10px;
     vertical-align: text-top;
     line-height: 10px;
-    white-space: wrap;
     
 }
 
@@ -98,29 +97,29 @@ body {
     padding: 10px;
     vertical-align: text-top;
     display: inline-block;
-    width: 10%;
+    width:30%;
     white-space: nowrap;
 }
 
 .tile3-c{
-    text-align: center;
+    text-align: left;
     font-size: 14px;
     text-size-adjust: 0.545;
     padding: 10px;
     vertical-align: text-top;
     display: inline-block;
-    width: 10%;
+    width: 30%;
     white-space: nowrap;
 }
 
 .tile3-r{
-    text-align: right;
+    text-align:left;
     font-size: 14px;
     text-size-adjust: 0.545;
     padding: 10px;
     vertical-align: text-top;
     display: inline-block;
-    width: 10%;
+    width: 30%;
     white-space: nowrap;
 
 }
