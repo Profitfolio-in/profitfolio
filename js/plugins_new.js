@@ -38,7 +38,7 @@ window.addEventListener('load', () => {
 
             //
             const row1 = document.getElementById('row1');
-            row1.innerHTML = resp.data[16].name + " : Rs. " + resp.data[18].name
+            row1.innerHTML = resp.data[16].name + " : Rs. " + Math.round(resp.data[18].name)
             const row2 = document.getElementById('row2');
             row2.innerHTML = resp.data[29].name + " : Rs. " + Math.round(resp.data[31].name) + "     ("+parseFloat((resp.data[31].name/resp.data[18].name)*100).toFixed(2)+ "%)"
             const row3 = document.getElementById('row3');

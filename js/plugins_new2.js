@@ -271,7 +271,7 @@ else if(resp.data[r+5].name != "" && resp.data[r+4].name == "") {
 
 
 const row1 = document.getElementById('row1');
-row1.innerHTML = "Starting Quarter with" + " : Rs. " + resp.data[r+40].name
+row1.innerHTML = "Starting Quarter with" + " : Rs. " + Math.round(resp.data[r+40].name)
 const row2 = document.getElementById('row2');
 row2.innerHTML = "Profit for the Quarter:" + " : Rs. " + Math.round(resp.data[r+53].name) + "     ("+parseFloat((resp.data[r+53].name/resp.data[r+40].name)*100).toFixed(2)+ "%)"
 const row3 = document.getElementById('row3');
