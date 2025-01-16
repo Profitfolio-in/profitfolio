@@ -27,6 +27,32 @@ window.addEventListener('load', () => {
         // Sample JavaScript to populate the table
         document.addEventListener('DOMContentLoaded', async function () {
 
+
+            const xValues = ['10/11/2023','12/31/2023','7/22/2024','10/16/2024','1/14/2025'];
+const yValues = [1000000,1212323,1474302,1846416,1979659];
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
+      data: yValues,
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: 1000000, max:2000000},font: {weight: 'bold', // Makes x-axis values bold
+    },}],
+    },
+  }
+});
+
+
   // Get the table element from the iframe
   //const iframe = document.querySelector('iframe');
   //const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;

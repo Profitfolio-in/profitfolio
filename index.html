@@ -9,6 +9,7 @@
     <title>Profitfolio - NSE</title>
     <script type="text/javascript" src="js/plugins_new.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/tempcss.css">
@@ -32,6 +33,8 @@
     </div>
         <br>
         <marquee behavior="scroll" direction="left"><mark>The "Oct to Dec, 2024" quarter numbers and profit % gets updated every 15 mins.</mark></marquee>
+        <br>
+
     </header>
         <!-- Loading screen (initially visible) -->
         <div id="loading-screen" class="loading-screen">
@@ -47,6 +50,8 @@
             <h5 id = "row1" class="tile-description"></h5>
             <p color:red id="row2" class="tile-description1"></p>
             <p id="row3" class="tile-description"></p>
+            <br>
+            <canvas id="myChart" ></canvas>
         </div>
         <div class="button-container">
     <button onclick="handleLeftButtonClick()">Previous Quarter</button>
