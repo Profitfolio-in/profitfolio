@@ -28,8 +28,8 @@ window.addEventListener('load', () => {
         document.addEventListener('DOMContentLoaded', async function () {
 
 
-            const xValues = ['10/11/2023','12/31/2023','7/22/2024','10/16/2024','1/14/2025'];
-const yValues = [1000000,1212323,1474302,1846416,1979659];
+            const xValues = ['10/11/2023','12/31/2023','7/22/2024','10/16/2024','1/14/2025','1/17/2025'];
+const yValues = [1000000,1212323,1474302,1846416,1979659,2044202];
 
 new Chart("myChart", {
   type: "line",
@@ -46,7 +46,7 @@ new Chart("myChart", {
   options: {
     legend: {display: false},
     scales: {
-      yAxes: [{ticks: {min: 1000000, max:2000000},font: {weight: 'bold', // Makes x-axis values bold
+      yAxes: [{ticks: {min: 1000000, max:2400000},font: {weight: 'bold', // Makes x-axis values bold
     },}],
     },
   }
