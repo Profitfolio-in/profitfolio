@@ -98,7 +98,7 @@ new Chart("myChart", {
                     //console.log(fileName);
                     const file = document.getElementById('file');
 
-                    if(Number(fileName)<4)
+                    if(Number(fileName)<5)
                         {file.innerHTML=Number(fileName)+1;
                         console.log(Number(fileName)+1);}
                     else

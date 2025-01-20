@@ -30,10 +30,11 @@ const gridOptions = {
             var fileName = document.getElementById('file').textContent;
             //alert(fileName)
             var serialNumber = 1;
-            if(Number(fileName)==1){ serialNumber = 94}
-            if(Number(fileName)==2){ serialNumber = 354}
-            if(Number(fileName)==3){ serialNumber = 575}
-            if(Number(fileName)==4){ serialNumber = 809}
+            if(Number(fileName)==1){ serialNumber = 94; j=290}
+            if(Number(fileName)==2){ serialNumber = 354; j=511}
+            if(Number(fileName)==3){ serialNumber = 575; j=745}
+            if(Number(fileName)==4){ serialNumber = 809; j=953}
+            if(Number(fileName)==5){ serialNumber = 1017; j=1187}
             //alert(serialNumber)
 
             //console.log(resp.data[69].name + " : " + Math.round(resp.data[314].name))
@@ -271,11 +272,11 @@ else if(resp.data[r+5].name != "" && resp.data[r+4].name == "") {
 
 
 const row1 = document.getElementById('row1');
-row1.innerHTML = "Starting Quarter with" + " : Rs. " + Math.round(resp.data[r+40].name)
+row1.innerHTML = "Starting Quarter with" + " : Rs. " + Math.round(resp.data[j].name)
 const row2 = document.getElementById('row2');
-row2.innerHTML = "Profit for the Quarter:" + " : Rs. " + Math.round(resp.data[r+53].name) + "     ("+parseFloat((resp.data[r+53].name/resp.data[r+40].name)*100).toFixed(2)+ "%)"
+row2.innerHTML = "Profit for the Quarter:" + " : Rs. " + Math.round(resp.data[j+13].name) + "     ("+parseFloat((resp.data[j+13].name/resp.data[j].name)*100).toFixed(2)+ "%)"
 const row3 = document.getElementById('row3');
-row3.innerHTML = "Ending Quarter with" + " : Rs. " + Math.round(resp.data[r+79].name)
+row3.innerHTML = "Ending Quarter with" + " : Rs. " + Math.round(resp.data[j+39].name)
 
 //-------------------------------------------------------------------------------------------------
             // Get the table element
